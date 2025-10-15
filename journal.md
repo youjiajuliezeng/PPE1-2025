@@ -26,8 +26,8 @@ Après modification, j’ai constaté qu’aucun résultat ne s’affichait enco
 ③Pour afficher la valeur d’une variable, ne pas oublier de la précéder du signe $, par exemple $fichier.
 
 ### 5.À propos de la commande cut
-####  (1)(.tsv) Si le séparateur est une tabulation : simplement cut -f3 (pour la 3ᵉ colonne) ou cut -d $'\t' -f3 (“$” pour être distingué de le pur string '\t')
-####  (2)(.csv) Si le séparateur est le point-virgule « ; » : cut -d ";" -f3
+- (1)(.tsv) Si le séparateur est une tabulation : simplement cut -f3 (pour la 3ᵉ colonne) ou cut -d $'\t' -f3 (“$” pour être distingué de le pur string '\t')
+- (2)(.csv) Si le séparateur est le point-virgule « ; » : cut -d ";" -f3
 
 ### 6.Astérisque *
 Il est nécessaire de placer “*” entre guillemets(“”) pour indiquer à Bash de ne pas l’interpréter prématurément.
@@ -63,5 +63,6 @@ Toutes les modifications effectuées localement doivent être manuellement synch
 Après ces étapes, les mises à jour deviennent visibles sur le site GitHub.
 
 ### 9. Il faut un espace après le “#” pour l'hiérarchie des titres dans le git ficher .md
+
 
 
