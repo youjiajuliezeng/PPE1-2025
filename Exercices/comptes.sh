@@ -1,4 +1,12 @@
 #!/bin/bash
-echo "2016: $(cat 2016*.ann | grep Location | wc -l)"
-echo "2017: $(cat 2017*.ann | grep Location | wc -l)"
-echo "2018: $(cat 2018*.ann | grep Location | wc -l)"
+
+echo "chemin donne : $1"
+
+CHEMIN=$1
+
+echo "Nombre de lieux en 2016 : "
+cat ${CHEMIN}/2016*.ann | grep Location | wc -l
+echo "Nombre de lieux en 2017 : "
+cat ${CHEMIN}/2017*.ann | grep Location | wc -l
+echo "Nombre de lieux en 2018 : "
+cat ${CHEMIN}/2018*.ann | grep Location | wc -l
