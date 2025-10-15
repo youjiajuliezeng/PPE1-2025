@@ -15,10 +15,10 @@ Après modification, j’ai constaté qu’aucun résultat ne s’affichait enco
 ### 3.Le « / » après le nom du dossier : e.g. mv  ~/Downloads/diapo_1  ~/Document_1/
 
 ### 4.Variables
-#### (1)Affectation : e.g. annee=$1
-#### (2)Utilisation : e.g. $annee ou ${annee}
-#### (3)Stockage du résultat de commande dans un variable 命令替换: la syntaxe $() permet de transformer le résultat d’une commande en variable. e.g.fichier=$(ls ./data_exercices)
-#### (4)Points d’attention :
+####  (1)Affectation : e.g. annee=$1
+####  (2)Utilisation : e.g. $annee ou ${annee}
+####  (3)Stockage du résultat de commande dans un variable 命令替换: la syntaxe $() permet de transformer le résultat d’une commande en variable. e.g.fichier=$(ls ./data_exercices)
+####  (4)Points d’attention :
 ①Aucune espace ne doit apparaître autour du signe « = » lors de l’affectation.
 
 ②Lorsque la variable risque d’être concaténée avec d’autres caractères, il est préférable d’utiliser des accolades {}.
@@ -26,8 +26,8 @@ Après modification, j’ai constaté qu’aucun résultat ne s’affichait enco
 ③Pour afficher la valeur d’une variable, ne pas oublier de la précéder du signe $, par exemple $fichier.
 
 ### 5.À propos de la commande cut
-#### (1)(.tsv) Si le séparateur est une tabulation : simplement cut -f3 (pour la 3ᵉ colonne) ou cut -d $'\t' -f3 (“$” pour être distingué de le pur string '\t')
-#### (2)(.csv) Si le séparateur est le point-virgule « ; » : cut -d ";" -f3
+####  (1)(.tsv) Si le séparateur est une tabulation : simplement cut -f3 (pour la 3ᵉ colonne) ou cut -d $'\t' -f3 (“$” pour être distingué de le pur string '\t')
+####  (2)(.csv) Si le séparateur est le point-virgule « ; » : cut -d ";" -f3
 
 ### 6.Astérisque *
 Il est nécessaire de placer “*” entre guillemets(“”) pour indiquer à Bash de ne pas l’interpréter prématurément.
@@ -54,13 +54,14 @@ Solution : recréer directement un dossier Exercices à l’aide de la commande 
 ### 8.Mise à jour sur GitHub
 Toutes les modifications effectuées localement doivent être manuellement synchronisées avec GitHub selon la procédure suivante :
 
-(1)Ajouter les fichiers à la zone de préparation (staging area) avec git add.
+ (1)Ajouter les fichiers à la zone de préparation (staging area) avec git add.
 
-(2)Enregistrer les modifications localement avec git commit (-m).
+ (2)Enregistrer les modifications localement avec git commit (-m).
 
 (3)Envoyer les changements sur GitHub avec git push.
 
 Après ces étapes, les mises à jour deviennent visibles sur le site GitHub.
 
 ### 9. Il faut un espace après le “#” pour l'hiérarchie des titres dans le git ficher .md
+
 
