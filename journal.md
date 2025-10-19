@@ -73,29 +73,29 @@ Après ces étapes, les mises à jour deviennent visibles sur le site GitHub.
 
 ## Travail 19 octobre 2025
 ### Explication des script codes
-#!/ usr/ bin/ bash  
-if [ $# -ne 1 ] #Si le nombre des variables n'est pas égal à 1  
-then #Excutez les étapes suivantes  
-echo " ce programme demande un argument " #Affichez la phrase sur le terminal  
-exit  
+#!/usr/bin/bash #la ligne shebang pour dire à l'ordi qu'il faut utiliser le programme /bin/bash  
+if [ $# -ne 1 ] #Si le nombre des paramètres n'est pas égal à 1  
+then #Excuter les étapes suivantes  
+echo " ce programme demande un argument " #Afficher la phrase sur le terminal  
+exit #terminer le boucle "if" et retourner l'exit valeur  
 fi  
-FICHIER_URLS = $1  
-OK =0  
-NOK =0  
-while read -r LINE ;  
-do  
-echo " la ligne : $LINE "  
-if [[ $LINE =∼ ^ https ?:// ]]  
-then  
-echo " ressemble à une URL valide "  
-OK =$( expr $OK + 1)  
-else  
-echo " ne ressemble pas à une URL valide "  
-NOK =$ ( expr $NOK + 1)  
-fi  
-done < $FICHIER_URLS  
-44  
-echo " $OK URLs et $NOK lignes douteuses "  
+FICHIER_URLS = $1 #définir le paramètre comme FICHIER_URLS  
+OK =0 #initialiser le premier variable OK  
+NOK =0 #initialiser le deuxième variable NOK  
+while read -r LINE ; #Lire le fichier ligne par ligne et stocke chaque ligne dans la variable LINE  
+do#Exécuter les étapes suivantes(dans le boucle while)  
+echo " la ligne : $LINE " #Afficher la ligne lue 
+if [[ $LINE =∼ ^ https ?:// ]] #Tester si la ligne commence par “http://” ou “https://”.  
+then #Si oui  
+echo " ressemble à une URL valide " #Afficher " ressemble à une URL valide "  
+OK =$( expr $OK + 1) #executer OK=OK+1  
+else #Sinon  
+echo " ne ressemble pas à une URL valide " #Afficher " ne ressemble pas à une URL valide "  
+NOK =$ ( expr $NOK + 1) ##executer NOK=NOK+1  
+fi #terminer le boucle if  
+done < $FICHIER_URLS #terminer le boucle while et indiquer les lignes à lire proviennent du $FICHIER_URLS  
+echo " $OK URLs et $NOK lignes douteuses " #Afficher le nombre total d’URLs valides (OK) et de lignes douteuses (NOK).  
+
 
 
 
