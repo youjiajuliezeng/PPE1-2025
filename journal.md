@@ -1,8 +1,14 @@
 # Journal de bord du projet encadré
+
+
 ## Travail 4 octobre 2025
 J'ai réappris le git pull.
+
+
 ## Travail 5 octobre 2025
 Aujourd'hui, j'ai réappris à utiliser git pull, git add, git commit, git push pour créer et modifier des files sur mon système et les synchroniser pour le github.
+
+
 ## Travail 14 octobre 2025
 ### 1.Format des caractères
 Lors de l’écriture de la ligne shebang dans un script, il est important de veiller à ce que le caractère « ! » soit en demi-chasse (caractère ASCII) et non en pleine chasse (utilisé en chinois).
@@ -63,6 +69,41 @@ Toutes les modifications effectuées localement doivent être manuellement synch
 Après ces étapes, les mises à jour deviennent visibles sur le site GitHub.
 
 ### 9. Il faut un espace après le “#” pour l'hiérarchie des titres dans le git ficher .md
+
+
+## Travail 19 octobre 2025
+### Explication des script codes
+#!/ usr/ bin/ bash  
+if [ $# -ne 1 ] #Si le nombre des variables n'est pas égal à 1  
+then #Excutez les étapes suivantes  
+echo " ce programme demande un argument " #Affichez la phrase sur le terminal  
+exit  
+fi  
+FICHIER_URLS = $1  
+OK =0  
+NOK =0  
+while read -r LINE ;  
+do  
+echo " la ligne : $LINE "  
+if [[ $LINE =∼ ^ https ?:// ]]  
+then  
+echo " ressemble à une URL valide "  
+OK =$( expr $OK + 1)  
+else  
+echo " ne ressemble pas à une URL valide "  
+NOK =$ ( expr $NOK + 1)  
+fi  
+done < $FICHIER_URLS  
+44  
+echo " $OK URLs et $NOK lignes douteuses "  
+
+
+
+
+
+
+
+
 
 
 
