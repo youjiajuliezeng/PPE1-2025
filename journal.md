@@ -97,6 +97,20 @@ done < $FICHIER_URLS #terminer le boucle while et indiquer les lignes à lire pr
 echo " $OK URLs et $NOK lignes douteuses " #Afficher le nombre total d’URLs valides (OK) et de lignes douteuses (NOK).  
 
 
+## Travail 22 octobre 2025
+### git
+C'est possible de faire un seul commit après avoir fini tous les 'git add'
+### bash script
+- = : Lors d’une affectation, ne pas mettre d’espace avant ni après le signe =
+-  [  ] & ;then : Dans une structure if [ condition ]; then … fi, il faut :
+  	1. mettre des espaces avant et après les crochets [ ],
+  	2. placer then soit sur la ligne suivante, soit le séparer par un ;
+- "$1" : Ajouter des guillemets autour des variables lorsque cela est nécessaire (par exemple pour un nom de fichier), afin d’éviter les problèmes liés aux caractères spéciaux. Exemple : url_fichier="$1"
+- ((a++)) ou a+=1 ? : En bash, l’expression a+=1 n’est pas valable pour les calculs numériques (elle fait une concaténation de chaînes, comme 0, 01, 011, 0111…). Utiliser plutôt ((a++))
+- -e \t pour un tab : Pour insérer une tabulation dans bash, utiliser la combinaison -e \t, où -e permet l’interprétation des caractères d’échappement
+
+
+
 
 
 
