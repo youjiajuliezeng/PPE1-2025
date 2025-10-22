@@ -108,6 +108,8 @@ C'est possible de faire un seul commit après avoir fini tous les 'git add'
 - "$1" : Ajouter des guillemets autour des variables lorsque cela est nécessaire (par exemple pour un nom de fichier), afin d’éviter les problèmes liés aux caractères spéciaux. Exemple : url_fichier="$1"
 - ((a++)) ou a+=1 ? : En bash, l’expression a+=1 n’est pas valable pour les calculs numériques (elle fait une concaténation de chaînes, comme 0, 01, 011, 0111…). Utiliser plutôt ((a++))
 - -e \t pour un tab : Pour insérer une tabulation dans bash, utiliser la combinaison -e \t, où -e permet l’interprétation des caractères d’échappement
+### http
+Je ne sais pas encore comment faire T__T en train d'essayer...
 
 
 
