@@ -109,7 +109,22 @@ C'est possible de faire un seul commit après avoir fini tous les 'git add'
 - ((a++)) ou a+=1 ? : En bash, l’expression a+=1 n’est pas valable pour les calculs numériques (elle fait une concaténation de chaînes, comme 0, 01, 011, 0111…). Utiliser plutôt ((a++))
 - -e \t pour un tab : Pour insérer une tabulation dans bash, utiliser la combinaison -e \t, où -e permet l’interprétation des caractères d’échappement
 ### http
-Je ne sais pas encore comment faire T__T en train d'essayer...
+bash   
+bash-3.2$ curl -I https://fr.wikipedia.org/wiki/Atlas_(robot)  
+bash: syntax error near unexpected token `('  
+#les parenthèses "()" sont des caractères illégals dans le syntax bash, il est nécessaire par conséquent ici de mettre des guillemets autour de l'argument d'url, comme suivant :  
+curl -I 'https://fr.wikipedia.org/wiki/Atlas_(robot)'  
+- !Rappel : substitution de commande $()
+ On peut utiliser awk pour extraire un colonne dans une line, et cut pour une certaine partie dans ce field  
+- Problème dûr :
+  J'ai entrée 'nomb_mots=$(curl -s "$line" | wc -w)  
+	echo -e "${count}\t${line}\t${code_HTTP}\t${encodage_page}\t${nomb_mots}";'  
+Mais  
+le nombre est collé au début de l'URL à la place du 'http'  
+e.g. 1        13920//fr.wikipedia.org/wiki/Robot     200     UTF-8  
+2        4124://fr.wikipedia.org/wiki/Robot_de_cuisine  200     UTF-8
+
+
 
 
 
