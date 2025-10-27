@@ -6,6 +6,9 @@ if [ $# -ne 1 ] ;then
 fi
 
 url_fichier="$1"
+output="../tableaux/tableau-fr.tsv"
+
+echo -e "Nomb\tURL\tcode_HTTP\tnomb_mots\tencodage_page">"$output"
 
 count=0
 while read -r line;
@@ -29,7 +32,6 @@ do
 		encodage_page="none"
 	fi
 
+	echo -e "${count}\t${line}\t${code_HTTP}\t${nomb_mots}\t${encodage_page}" >> "$output"
 
-	echo -e -n "${count}\t${line}\t${code_HTTP}\t"
-	echo "${nomb_mots}	${encodage_page}"
 done < "$url_fichier"

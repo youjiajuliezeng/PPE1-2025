@@ -1,0 +1,11 @@
+Nomb	URL	code_HTTP	nomb_mots	encodage_page
+1	https://fr.wikipedia.org/wiki/Robot	200	   13583	UTF-8
+2	https://fr.wikipedia.org/wiki/Robot_de_cuisine	200	    4051	UTF-8
+3	https://fr.wikipedia.org/wiki/Robot_d%27indexation	200	    5370	UTF-8
+4	https://fr.wikipedia.org/wiki/Bot_informatique	200	    6417	utf-8
+5	https://fr.wikipedia.org/wiki/Atlas_(robot)	429	    3968	utf-8
+6	https://roboty.magistry.fr	none	       0	none
+7	https://fr.wikipedia.org/wiki/Robot_(Leonard_de_Vinci)	429	     264	UTF-8
+8	https://fr.wiktionary.org/wiki/robot	429	     264	utf-8
+9	https://fr.wikipedia.org/wiki/Protocole_d%27exclusion_des_robots	200	     264	utf-8
+10	https://fr.wikipedia.org/wiki/Robotique	429	     264	UTF-8
