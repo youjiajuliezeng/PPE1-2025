@@ -124,6 +124,9 @@ le nombre est collé au début de l'URL à la place du 'http'
 e.g. 1        13920//fr.wikipedia.org/wiki/Robot     200     UTF-8  
 2        4124://fr.wikipedia.org/wiki/Robot_de_cuisine  200     UTF-8
 
+## Travail 6 novembre 2025
+Dans le bash, un\ bash signifie "un bash"  
+
 
 
 
