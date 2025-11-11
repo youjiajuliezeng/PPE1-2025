@@ -1,12 +1,18 @@
 #!/bin/bash
 
-if [ $# -ne 1 ] ;then
-	echo "Erreur : Il faut entrer un argument svp."
+if [ $# -ne 2 ] ;then
+	echo "Erreur : Il faut entrer deux argument (le chemin vers le fichier d'urls & le chemin vers le tsv de sortie) svp."
 	exit
 fi
 
 url_fichier="$1"
-output="../tableaux/tableau-fr.tsv"
+output="$2"
+
+if [ ! -f "$url_fichier" ]; then
+	echo "Ce programme demande un fichier."
+	exit
+fi
+
 
 echo -e "Nomb\tURL\tcode_HTTP\tnomb_mots\tencodage_page">"$output"
 
@@ -17,21 +23,26 @@ do
 		line="https://$line"
 	fi
 
-	((count++))
+	((count++)) #count=$(expr $count + 1)
 
-	code_HTTP=$(curl -I -s "$line" | head -n 1 | awk '{print $2}')
+	tmpfile=$(mktemp)
+
+	code_encodage=$(curl -s -L -i -o "$tmpfile" -w "%{http_code}\n%{content_type}" "$line")
+
+	code_HTTP=$(echo "$code_encodage" | head -n 1)
 	if [ -z "$code_HTTP" ] ;then
 		code_HTTP="none"
 	fi
 
-	nomb_mots=$(curl -s "$line" | wc -w)
-
-	line_for_encodage=$line
-	encodage_page=$(curl -I -s "$line_for_encodage" | grep content-type: | cut -d= -f2)
+	encodage_page=$(echo "$code_encodage" | grep -E -o "charset=[^;[:space:]]*" | cut -d= -f2)
 	if [ -z "$encodage_page" ] ;then
 		encodage_page="none"
 	fi
 
-	echo -e "${count}\t${line}\t${code_HTTP}\t${nomb_mots}\t${encodage_page}" >> "$output"
+	nomb_mots=$(cat "$tmpfile" | lynx -dump -stdin -nolist | wc -w)
+
+	rm -f "$tmpfile"
+
+	echo -e "${count}\t${line}\t${code_HTTP}\t${nomb_mots}\t${encodage_page}" >> "$output"  #-e + \t
 
 done < "$url_fichier"
