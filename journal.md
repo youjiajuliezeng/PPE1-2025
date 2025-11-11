@@ -126,6 +126,15 @@ e.g. 1        13920//fr.wikipedia.org/wiki/Robot     200     UTF-8
 
 ## Travail 6 novembre 2025
 Dans le bash, un\ bash signifie "un bash"  
+Conversion d'un fichier texte/tabulaire en fichier HTML en y intégrant les balises appropriées :  
+Pour ce travail, j’ai saisi le code manuellement, ce qui m’a permis de mieux comprendre la structure et la hiérarchie d’un document HTML. Nous aborderons probablement par la suite l’écriture de scripts permettant d’automatiser ce processus, mais je ne maîtrise pas encore cette compétence.  
+Au cours d'extraire les infos d'un HTML, pour éviter la mélange de l'entête et les contenus, on peut ajouter un fichier temporaire dans le script et le supprimer après.  
+Ex.  
+tmpfile=$(mktemp)  
+code_encodage=$(curl -s -L -i -o "$tmpfile" -w "%{http_code}\n%{content_type}" "$line")
+..."$code_encodage"...
+rm -f "$tmpfile"
+
 
 
 
