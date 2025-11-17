@@ -8,19 +8,49 @@ fi
 url_fichier="$1"
 output="$2"
 
-echo -e "
+echo -e '
 <html>
 <head>
+	<meta charset="UTF-8" />
+	<title>URLs et ses headers & nombres</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/versions/bulma-no-dark-mode.min.css">
+</head>
+
 <body>
-<table>
-	<tr>
-	<th>numéro</th>
-	<th>URL</th>
-	<th>HTTP code</th>
-	<th>nombre de mots</th>
-	<th>encodage de page</th>
-	</tr>
-" > tableaux/resultats.html
+    <section class="section has-background-grey">
+      <div class="container has-background-white">
+        <div class="hero has-text-centered">
+          <div class="hero-body">
+            <h1 class="title">
+              URLs et ses headers & nombres
+              <br />
+              <br />
+              <img src="images/plurital-logo.jpg" />
+            </h1>
+          </div>
+        </div>
+        <nav class="tabs is-centered">
+          <ul>
+            <li><a href="3_index_bulma.html">Accueil</a></li>
+            <li><a href="scripts.html">Scripts</a></li>
+            <li class="is-active"><a href="tableaux.html">Tableaux</a></li>
+          </ul>
+        </nav>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <div class="block">
+
+	      <table>
+		<tr>
+		<th>numéro</th>
+		<th>URL</th>
+		<th>HTTP code</th>
+		<th>nombre de mots</th>
+		<th>encodage de page</th>
+		</tr>
+
+' > tableaux/tableau.html
 
 if [ ! -f "$url_fichier" ]; then
 	echo "Ce programme demande un fichier."
@@ -59,13 +89,19 @@ do
 
 	echo -e "${count}\t${line}\t${code_HTTP}\t${nomb_mots}\t${encodage_page}" >> "$output"  #-e + \t
 
-	echo -e "\t<tr>\n\t<td>${count}</td>\n\t<td><a href=\"${line}\" target=\"_blank\">${line}</a></td>\n\t<td>${code_HTTP}</td>\n\t<td>${nomb_mots}</td>\n\t<td>${encodage_page}</td>\n\t</tr>" >> tableaux/resultats.html
+	echo -e "\t<tr>\n\t<td>${count}</td>\n\t<td><a href=\"${line}\" target=\"_blank\">${line}</a></td>\n\t<td>${code_HTTP}</td>\n\t<td>${nomb_mots}</td>\n\t<td>${encodage_page}</td>\n\t</tr>" >> tableaux/tableau.html
 
 done < "$url_fichier"
 
-echo -e "
-</table>
+echo -e '
+	      </table>
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 </body>
 </html>
-" >> tableaux/resultats.html
+' >> tableaux/tableau.html
 
