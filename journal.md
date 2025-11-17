@@ -135,7 +135,8 @@ code_encodage=$(curl -s -L -i -o "$tmpfile" -w "%{http_code}\n%{content_type}" "
 ..."$code_encodage"...
 rm -f "$tmpfile"
 
-
+## Travail 17 novembre 2025
+Quand il y a trop de "" dans le echo, il existera des interruptions. On peut remplacer le "" à l'extérieur par ''
 
 
 
