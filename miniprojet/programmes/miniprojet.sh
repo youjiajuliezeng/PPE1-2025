@@ -8,6 +8,20 @@ fi
 url_fichier="$1"
 output="$2"
 
+echo -e "
+<html>
+<head>
+<body>
+<table>
+	<tr>
+	<th>numéro</th>
+	<th>URL</th>
+	<th>HTTP code</th>
+	<th>nombre de mots</th>
+	<th>encodage de page</th>
+	</tr>
+" > tableaux/resultats.html
+
 if [ ! -f "$url_fichier" ]; then
 	echo "Ce programme demande un fichier."
 	exit
@@ -45,4 +59,13 @@ do
 
 	echo -e "${count}\t${line}\t${code_HTTP}\t${nomb_mots}\t${encodage_page}" >> "$output"  #-e + \t
 
+	echo -e "\t<tr>\n\t<td>${count}</td>\n\t<td><a href=\"${line}\" target=\"_blank\">${line}</a></td>\n\t<td>${code_HTTP}</td>\n\t<td>${nomb_mots}</td>\n\t<td>${encodage_page}</td>\n\t</tr>" >> tableaux/resultats.html
+
 done < "$url_fichier"
+
+echo -e "
+</table>
+</body>
+</html>
+" >> tableaux/resultats.html
+
