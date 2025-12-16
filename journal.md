@@ -138,6 +138,20 @@ rm -f "$tmpfile"
 ## Travail 17 novembre 2025
 Quand il y a trop de "" dans le echo, il existera des interruptions. On peut remplacer le "" à l'extérieur par ''
 
+## Travail 15 décembre 2025
+Je vous présente mes sincères excuses, messieurs, si vous voyez les mots ici, pour la disparition des journaux de bord des semaines précédentes. 
+C'était vrai que j'ai pas fait aussi d'efforts pendant du temps libre qu'auparavant à cause de beaucoup d'examens d'autres cours, je tiens toutefois à préciser que j’ai malgré tout essayé de suivre sérieusement l’ensemble des séances et de rester engagée dans le cours. 
+J'ai repris un peu mon énergie pour le projet final, puisque j'avais l'habitude de travailler sous la motivation de deadlines, ce qui n'est pas du tout idéal et j'en suis consciente. Je suis trop désolée encore, je me disais que je clarifie un peu mes raisons ici dans l'espérance que vous ne mettez pas trop bas de notes sur mes jounaux de bord s'il vous plaît. Grands remerciements. T____T  
+
+Voici mon journal de cette semaine.
+Avec les autres deux membres du groupe, nous avons déjà choisi le mot « rêve » comme objet d’étude. À partir de ce choix, nous avons commencé une première phase de recherche sur Google afin de repérer des pages web susceptibles de constituer notre corpus. Cette étape m'a rapidement confrontés à des questions très pratiques : la diversité des types de pages, leur accessibilité, mais aussi leur pertinence linguistique pour une exploitation ultérieure.  
+
+En avançant dans cette recherche, je me suis rendue compte que, pour aller plus loin, il était nécessaire de remettre en place une véritable chaîne de traitement des données. Or, j’avais en grande partie oublié certaines commandes vues précédemment, notamment la logique générale des scripts bash utilisés pour la collecte et le filtrage des textes.  
+
+C’est dans ce contexte que je suis retournée consulter les anciens supports de cours, en particulier ceux du mini-projet, ainsi que le code que j’avais moi-même écrit à l’époque. Cette relecture m’a permis de me rappeler comment lire un fichier d’URLs, traiter les pages une par une, extraire le texte brut, puis repérer des contextes autour d’un mot cible à l’aide de commandes comme lynx et grep. J’ai également revu les questions liées à l’encodage (UTF-8 ou non), indispensables pour savoir si une page est réellement exploitable.  
+
+En m’appuyant sur ces rappels, j’ai commencé à tester concrètement les pages trouvées pour le mot “rêve” : vérification de leur accessibilité, possibilité d’extraction du texte, et premiers essais de repérage du mot dans le contenu. Cette phase m’a permis de faire le tri entre des pages réellement utilisables et d’autres qui posent problème (contenu pauvre, structure inadéquate, ou difficultés techniques).  
+
 
 
 
